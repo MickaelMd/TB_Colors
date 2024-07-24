@@ -15,12 +15,14 @@ header button {
   padding: 20px 60px 20px 60px;
   margin: 5px;
   border-radius: 30px;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.466);
+  font-weight: 800;
 }
 header button:hover {
   border: 1px solid burlywood;
   background-color: rgba(0, 255, 255, 0.137);
   transition: 50ms;
+  color: black;
 }
 
 #color_section {
@@ -82,4 +84,9 @@ header button:hover {
 #reset_btn {
   margin: -40px 0px 35px 0px;
   padding: 5px 40px 5px 40px;
+}
+
+#random_btn {
+  margin: -20px 0px 35px 0px;
+  padding: 5px 30px 5px 30px;
 }

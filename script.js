@@ -9,47 +9,56 @@ document.addEventListener("DOMContentLoaded", function () {
   const colorpink = document.getElementById("rose_btn");
   const colorblack = document.getElementById("noir_btn");
   const colorgrey = document.getElementById("gris_btn");
-  const randomcolors = document.getElementById("random_btn");
   const section = document.getElementById("color_section");
 
   colorred.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("rouge");
   });
   colorblue.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("bleu");
   });
   colororange.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("orange");
   });
   colorpurple.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("violet");
   });
   colorgreen.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("vert");
   });
   colorbrown.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("marron");
   });
   coloryellow.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("jaune");
   });
   colorpink.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("rose");
   });
   colorblack.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("noir");
   });
   colorgrey.addEventListener("click", function () {
     section.removeAttribute("class");
+    section.removeAttribute("style", "background-color:");
     section.classList.add("gris");
   });
 
@@ -116,4 +125,29 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     console.log("bleu value " + select_bleu.value);
   });
+
+  let rgb_rouge_r = 0;
+  let rgb_vert_r = 0;
+  let rgb_bleu_r = 0;
+  const random_btn = document.getElementById("random_btn");
+
+  random_btn.addEventListener("click", function () {
+    rgb_rouge_r = Math.floor(Math.random() * 255);
+    rgb_vert_r = Math.floor(Math.random() * 255);
+    rgb_bleu_r = Math.floor(Math.random() * 255);
+
+    section.setAttribute(
+      "style",
+      "background-color:" +
+        " rgba(" +
+        rgb_rouge_r +
+        "," +
+        rgb_vert_r +
+        "," +
+        rgb_bleu_r +
+        ")"
+    );
+  });
+
+  console.log(Math.floor(Math.random() * 255));
 });
