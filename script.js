@@ -67,6 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
   reset_btn.addEventListener("click", function () {
     section.removeAttribute("class");
     section.removeAttribute("style", "background-color:");
+    select_bleu.value = 0;
+    select_rouge.value = 0;
+    select_vert.value = 0;
   });
 
   const select_rouge = document.getElementById("rouge_input");
@@ -107,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
         rgb_bleu +
         ")"
     );
+
     console.log("vert value " + select_vert.value);
   });
 
@@ -131,15 +135,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let rgb_bleu_r = 0;
   const random_btn = document.getElementById("random_btn");
 
-  random_btn.addEventListener("click", function () {
+  function setRandomBackgroundColor() {
     rgb_rouge_r = Math.floor(Math.random() * 255);
     rgb_vert_r = Math.floor(Math.random() * 255);
     rgb_bleu_r = Math.floor(Math.random() * 255);
+    select_rouge.value = rgb_rouge;
 
     section.setAttribute(
       "style",
-      "background-color:" +
-        " rgba(" +
+      "background-color: rgba(" +
         rgb_rouge_r +
         "," +
         rgb_vert_r +
@@ -147,6 +151,17 @@ document.addEventListener("DOMContentLoaded", function () {
         rgb_bleu_r +
         ")"
     );
+    select_rouge.value = rgb_rouge_r;
+    select_vert.value = rgb_vert_r;
+    select_bleu.value = rgb_bleu_r;
+  }
+
+  random_btn.addEventListener("click", setRandomBackgroundColor);
+
+  document.addEventListener("keydown", function (event) {
+    if (event.code === "KeyR") {
+      setRandomBackgroundColor();
+    }
   });
 
   console.log(Math.floor(Math.random() * 255));
